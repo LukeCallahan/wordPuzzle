@@ -23,7 +23,23 @@ function removeVowel(word, text) {
     return noVowelsArray;
 }
 
+let vowelArray = text.split(" ");
 
+
+function replaceVowel(word, text) {
+  let textArray = text.split(" ");
+  
+  for (let i = 0; i < textArray.length; i +=1) {
+    if (textArray[i].includes(word)) {
+      noVowelElement = textArray[i].replaceAll(word, "-");
+      textArray[i] = noVowelElement;
+    } else {
+      VowelElement = textArray[i];
+      textArray[i] = VowelElement;
+    };
+  };
+  return textArray;
+}
 
 
 
