@@ -1,29 +1,25 @@
 // Business Logic
 
+const text = "Believe you can and you're halfway there. Theodore Roosevelt";
+const vowelArray = ["a","e","i","o","u"];
+
 function individualVowel(vowelArray) {
   for (let i = 0; i < vowelArray.length; i+=1) {
     let individualVowelOutput = vowelArray[i];
     console.log(individualVowelOutput);
+    return individualVowelOutput;
   }
 }
 
-function removeVowel(word, text) {
-  let noVowelsArray = [];
-  
-  textArray = text.split(" ");
-  textArray.forEach(function(element) {
-    if (element.includes("a")) {
-      noVowelElement = element.replaceAll("a", "-");
-      noVowelsArray.push(noVowelElement);
-    } else {
-      noVowelElement = element;
-      noVowelsArray.push(noVowelElement);
-    };
-  })
-    return noVowelsArray;
+function intake(vowelArray, text) {
+  vowelArray.forEach(function(vowelToTest) {
+    cleanArray = replaceVowel(vowelToTest, text);
+  });
+  // console.log(textArray);
+  return cleanArray;
 }
 
-let vowelArray = text.split(" ");
+
 
 
 function replaceVowel(word, text) {
@@ -47,14 +43,25 @@ function replaceVowel(word, text) {
 
 
 
+
+
+
+
+
+
+
+
 // UI Logic
 
-const input = "Believe you can and you're halfway there. Theodore Roosevelt";
-const vowelArray = ["a","e","i","o","u"];
 
 
-window.addEventListener("load", function() {
 
+window.addEventListener("load", function(event) {
+  event.preventDefault();
+  let result = document.getElementById("results");
+
+  intake(vowelArray, text);
+  result.append(cleanArray);
 });
 
 
